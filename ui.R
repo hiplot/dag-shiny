@@ -109,7 +109,7 @@ components$about$gerkelab <- tagList(
 # )
 
 # Components - Build ----
-components$build <- box(
+components$build <- shinydashboard::box(
   title = "Build",
   id = "build-box",
   width = 12,
@@ -321,7 +321,7 @@ function(request) {
           tabName = "tweak",
           two_column_flips_on_mobile(
             components$tweak,
-            box(
+            shinydashboard::box(
               title = "Preview DAG",
               dagPreviewUI("tweak_preview", include_graph_downloads = TRUE)
             )
@@ -330,11 +330,11 @@ function(request) {
         tabItem(
           tabName = "latex",
           two_column_flips_on_mobile(
-            box(
+            shinydashboard::box(
               title = "Edit LaTeX",
               components$latex
             ),
-            box(
+            shinydashboard::box(
               title = "Preview LaTeX",
               dagPreviewUI("latex_preview", include_graph_downloads = FALSE)
             )
@@ -342,17 +342,17 @@ function(request) {
         ),
         tabItem(
           tabName = "about",
-          box(
+          shinydashboard::box(
             title = "Examples",
             width = "12 col-md-6",
             examples_UI("example")
           ),
-          box(
+          shinydashboard::box(
             title = "About shinyDAG",
             width = "12 col-md-6",
             components$about$gerkelab
           )#,
-          # box(
+          # shinydashboard::box(
           #   title = "About shinyDAG",
           #   width = "12 col-md-6",
           #   components$about$usage
